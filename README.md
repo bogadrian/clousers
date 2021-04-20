@@ -1,1 +1,1 @@
-# clousers
+# Understanding Clousers Dummy App
