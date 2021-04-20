@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Clousers</title>
+    <style>
+      body {
+        width: 500px;
+        margin: 0 auto;
+        font-family: 'Courier New', monospace;
+      }
+      h1 {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+      }
+      #span-inner {
+        color: rgb(81, 219, 26);
+        border: 2px solid rgb(81, 219, 26);
+        width: 400px;
+        height: 30px;
+        margin-bottom: 20px;
+        padding: 5px; font-size: 30px;
+      }
+      #span-outer {
+        width: 400px;
+        height: 30px;
+        color: rgb(253, 255, 253);
+        border: 2px solid rgb(250, 49, 110);
+        padding: 5px; font-size: 30px;
+      }
+      #span-input {
+        width: 400px;
+        height: 30px;
+        color: rgb(255, 255, 255);
+        border: 2px solid rgb(231, 225, 228);
+        padding: 5px; font-size: 30px;
+      }
+      #container {
+        height: 300px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+      }
+
+      #clousers-response {
+        height: 100%;
+
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background-color: black;
+        margin: 50px 0 50px 0;
+      }
+      #input {
+        height: 30px;
+        width: 300px;
+        border: 1px solid rgb(158, 25, 25);
+        padding: 10px 0 10px 5px;
+        outline: none;
+      }
+      #button {
+        margin-top: 30px;
+        width: 300px;
+        padding: 20px 0 20px 0;
+        background-color: black;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold; font
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>understanding Clousers in JavaScript</h1>
+
+    <div id="clousers-response">
+      <p>Input Variable</p>
+      <span id="span-input"></span>
+      <p>Variable catch in clouser</p>
+      <span id="span-outer"></span>
+      <p>Variable used later from clouser</p>
+      <span id="span-inner"></span>
+    </div>
+
+    <div id="container">
+      <input type="text" id="input" autocomplete="off" />
+      <button type="click" id="button">get outer input value</button>
+    </div>
+
+    <script type="module" src="outer.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
