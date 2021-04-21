@@ -4,11 +4,10 @@ const spanInner = document.getElementById('span-inner');
 const button = document.getElementById('button');
 const outerInput = document.getElementById('input');
 
-const outerUp = 3;
 // where the magic happens
 const outerFunction = outerInputValue => {
   const innerFunction = val => {
-    // spanOuter.textContent = outerInputValue;
+    //spanOuter.textContent = outerInputValue;
 
     // extract object value from key user
     spanOuter.textContent = outerInputValue.value;
@@ -19,13 +18,13 @@ const outerFunction = outerInputValue => {
   return innerFunction;
 };
 
-const callingContext = 1;
 // how we call a clouser
 const callback1 = user => {
   let innerFunction = outerFunction(user);
 
+  user = 'New User';
+
   setTimeout(() => {
-    const inter = 'rrr';
     const returnedVal = innerFunction('is');
     console.log(returnedVal);
   }, 2000);
@@ -35,110 +34,94 @@ const callback1 = user => {
 
   setTimeout(() => {
     const returnedVal = innerFunction('explaining');
-
     console.log(returnedVal);
   }, 3000);
+
   spanOuter.textContent = '';
   spanInner.textContent = '';
+
   setTimeout(() => {
     const returnedVal = innerFunction('JavaScript');
-
     console.log(returnedVal);
   }, 4000);
+
   spanOuter.textContent = '';
   spanInner.textContent = '';
+
   setTimeout(() => {
     const returnedVal = innerFunction('clousers');
-
     console.log(returnedVal);
   }, 5000);
+
   spanOuter.textContent = '';
   spanInner.textContent = '';
+
   setTimeout(() => {
     const returnedVal = innerFunction('with');
-
     console.log(returnedVal);
   }, 6000);
+
   spanOuter.textContent = '';
   spanInner.textContent = '';
+
   setTimeout(() => {
     const returnedVal = innerFunction('a');
-
     console.log(returnedVal);
   }, 7000);
+
   spanOuter.textContent = '';
   spanInner.textContent = '';
+
   setTimeout(() => {
     const returnedVal = innerFunction('live');
     console.log(returnedVal);
   }, 8000);
+
   spanOuter.textContent = '';
   spanInner.textContent = '';
+
   setTimeout(() => {
     const returnedVal = innerFunction('example');
     console.log(returnedVal);
   }, 9000);
+
   spanOuter.textContent = '';
   spanInner.textContent = '';
 };
 
-//change the user value
+// call it with an object
 const callback2 = user => {
   let innerFunction = outerFunction(user);
-  user = 'New User';
+  user.value = 'New User';
 
   setTimeout(() => {
     innerFunction('is');
   }, 2000);
+
   setTimeout(() => {
     innerFunction('explaining');
   }, 3000);
+
   setTimeout(() => {
     innerFunction('JavaScript');
   }, 4000);
+
   setTimeout(() => {
     innerFunction('clousers');
   }, 5000);
+
   setTimeout(() => {
     innerFunction('with');
   }, 6000);
+
   setTimeout(() => {
     innerFunction('a');
   }, 7000);
+
   setTimeout(() => {
     innerFunction('live');
   }, 8000);
-  setTimeout(() => {
-    innerFunction('example');
-  }, 9000);
-};
 
-// call it with an object
-const callback3 = user => {
-  let innerFunction = outerFunction(user);
-  user.value = 'Jhon';
-
-  setTimeout(() => {
-    innerFunction('is');
-  }, 2000);
-  setTimeout(() => {
-    innerFunction('explaining');
-  }, 3000);
-  setTimeout(() => {
-    innerFunction('JavaScript');
-  }, 4000);
-  setTimeout(() => {
-    innerFunction('clousers');
-  }, 5000);
-  setTimeout(() => {
-    innerFunction('with');
-  }, 6000);
-  setTimeout(() => {
-    innerFunction('a');
-  }, 7000);
-  setTimeout(() => {
-    innerFunction('live');
-  }, 8000);
   setTimeout(() => {
     innerFunction('example');
   }, 9000);
@@ -150,12 +133,9 @@ button.addEventListener('click', () => {
   // call the clouser
   //callback1(value);
 
-  // call the clouser and change the value on run
-  //callback2(value);
-
   // call the clouser with an object
   const user = { value };
-  callback3(user);
+  callback2(user);
 
   outerInput.value = '';
   spanInput.innerHTML = '';
